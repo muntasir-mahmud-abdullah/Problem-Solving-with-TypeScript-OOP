@@ -33,3 +33,19 @@ function concatenateArrays<T>(...arrays: T[][]): T[] {
     return combined;
 }
 
+interface Course {
+    title: string;
+    students: number;
+    isPublished: boolean;
+}
+
+function getPopularCourses(courses:Course[],minStudents: number):Course[] {
+    let popularCourses: Course[] = [];
+    for(let course of courses){
+        if(course.isPublished && course.students >= minStudents){
+            popularCourses.push(course);
+        }
+    }
+    return popularCourses;
+}
+
