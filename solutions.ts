@@ -23,5 +23,13 @@ function processInput(value: string | number | boolean) : string | number | null
     return result;
 }
 
+function formatCoordinate(coordinate:readonly [number, number, string]): string {
+    return `Location: ${coordinate[2]} (${coordinate[0]}, ${coordinate[1]})`;
+}
 
+function concatenateArrays<T>(...arrays: T[][]): T[] {
+    let array:T[] = []
+    const combined = array.concat(...arrays)
+    return combined;
+}
 
