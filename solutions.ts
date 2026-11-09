@@ -53,17 +53,33 @@ function getPopularCourses(courses: Course[], minStudents: number): Course[] {
   return popularCourses;
 }
 
-const users = [
-  { id: 1, name: "Rakib", role: "Admin" },
-  { id: 2, name: "Sadia", role: "Editor" },
-  { id: 3, name: "Tariq", role: "Subscriber" },
-];
-function pluckValues<T, K extends keyof T>(items:T[],key:K) {
-    let values = [];
-    for(let user of items){
-        values.push(user[key]);
-    }
-    return values;
+function pluckValues<T, K extends keyof T>(items: T[], key: K): T[K][] {
+  let values = [];
+  for (let item of items) {
+    values.push(item[key]);
+  }
+  return values;
 }
-console.log(pluckValues(users, "role")) ;
 
+class Employee {
+  constructor(
+    protected name: string,
+    private baseSalary: number,
+  ) {}
+  getDetails(): string {
+    return `Employee: ${this.name}, Base Salary: ${this.baseSalary}`;
+  }
+}
+
+class Manager extends Employee {
+  constructor(
+    name: string,
+    baseSalary: number,
+    private department: string,
+  ) {
+    super(name, baseSalary);
+  }
+  getRoleInfo():string {
+    return `Manager of ${this.department}: ${this.name}`;
+  }
+}
