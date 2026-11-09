@@ -16,7 +16,7 @@ Implemented eight TypeScript problems covering:
 - OOP concepts, inheritance, and access modifiers
 - Asynchronous programming with Promises and error handling
 
-### 2. Technical Blog Posts (10 Marks)
+### 2. Technical Blog Posts 
 
 Two technical blog posts explaining TypeScript concepts with practical code examples:
 
